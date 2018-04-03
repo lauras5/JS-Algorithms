@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Is Palendrom Algorithm</title>
+</head>
+<body>
+    
+
+
+
+    <script>
+        function isPalendrome(string) {
+            //turn letters into lower case version
+            string = string.toLowerCase();
+            //turn string into array of characters
+            var charactersArr = string.split('');
+            //ignore any character in string that isn't a letter
+            var validCharacters = 'abcdefghijklmnopqrstuvwxyz'.split('');
+            //strip out any character that isnt a letter
+            var lettersArr = [];
+            //2 ways to create function below, we are using the arrow function which is an shorter way
+            // charactersArr.forEach(function(char) { })
+            charactersArr.forEach(char => {
+                if(validCharacters.indexOf(char) > -1) {
+                    lettersArr.push(char);
+                }
+                //same if statement but shorter
+                // if(validCharacters.indexOf(char) > -1) lettersArr.push(char);
+            });
+            //check to see if they are the same forwards and backwards
+            if(lettersArr.join('') === lettersArr.reverse().join('')) return true;
+            else return false;
+        }
+
+        console.log(isPalendrome("Madam I'm Adam"))
+        console.log(isPalendrome("Race Car"))
+        console.log(isPalendrome("I like tacos"))
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</body>
+</html>

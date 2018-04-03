@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Caesar Cipher Algorithm</title>
+</head>
+
+<body>
+    <h1>Caesar Cipher</h1>
+    <p> Function that takes in 2 perameters (string, number). The function takes in the string, and for each letter, it moves it forward through the letters of the alphabet a specified amount of times, to create a Cipher. </p>
+
+    <script>
+        function caesarCipher(str, num) {
+            // turns num into appropriate number, even if it is a negative number
+            num = num % 26;
+            // string into lowercase
+            var lowerCaseString = str.toLowerCase();
+            // reference when we shift letters in string
+            // array for every letter of alphabet in order
+            var alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
+            //empty string for new string
+            var newString = '';
+            // increment by one at every iteration
+            for (var i = 0; i < lowerCaseString.length; i++) {
+                //find current letter
+                var currentLetter = lowerCaseString[i]
+                //if space, add space to string without changing string
+                if (currentLetter === ' ') {
+                    //leaves space in newString
+                    newString += currentLetter;
+                    // moves for loop to next iteration
+                    continue;
+                }
+                //where current letter is in alphabet array
+                var currentIndex = alphabet.indexOf(currentLetter);
+                //index of new letter in alphabet array
+                //get this letter and add it to our newString
+                var newIndex = currentIndex + num;
+                //if number is greater than 25 or less than 0
+                if (newIndex > 25) newIndex = newIndex - 26;
+                if (newIndex < 0) newIndex = 26 + newIndex;
+                //sets any letters that were uppercase in str to newString
+                if (str[i] === str[i].toUpperCase()) {
+                    newString += alphabet[newIndex].toUpperCase()
+                }
+                else newString += alphabet[newIndex];
+            }
+            return newString;
+        }
+
+        console.log(caesarCipher('Zoo Keeper', 2))
+        console.log(caesarCipher('Laura is Cool', -5))
+
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</body>
+
+</html>

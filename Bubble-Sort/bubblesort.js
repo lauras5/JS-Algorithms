@@ -3,7 +3,7 @@ var numbers = [1, 326, 251, 24, 284, 364, 287, 74, 89, 63, 455, 130, 408, 378, 3
 // var resultDiv = $("#result")
 // var button = $("button")
 
-// console.log("hello")
+console.log("hello")
 
 // $(".start").html(numbers + ", ")
 // function sort(nums) {
@@ -57,7 +57,7 @@ function sortNums(nums) {
     for (var i = 0; i < nums.length; i++) {
         for (var j = 0; j< nums.length; j++) {
             if (nums[j - 1] > nums[j]) {
-                var tmpNum = nums[j-1]
+                var tmpNum = nums[j - 1]
                 nums[j - 1] = nums[j]
                 nums[j] = tmpNum
             }

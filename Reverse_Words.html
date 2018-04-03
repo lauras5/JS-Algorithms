@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Reverse Words Algorithm</title>
+</head>
+
+<body>
+    <h1>Reverse Words</h1>
+
+    <script>
+        function reverseWords(string) {
+            var wordsArr = string.split(' ');
+            var reversedWordsArr = [];
+            
+            wordsArr.forEach(word => {
+                var reversedWord = '';
+                // moving backward to first character of string
+                for (var i = word.length -1; i>=0; i--) {
+                    // add current letter to reversed word at position i
+                    reversedWord += word[i];
+                }
+                //after letters have been added to reversedWord add to rWArray
+                reversedWordsArr.push(reversedWord)
+            });
+            // returns as a string
+            return reversedWordsArr.join(' ')
+        }
+        reverseWords('Nice to meet you!')
+        console.log(reverseWords('nice to meet you'))
+
+    </script>
+
+
+</body>
+
+</html>

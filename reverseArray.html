@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Reverse Array in Place</title>
+</head>
+
+<body>
+    <script>
+        // declare function that takes in an array
+        function reverseArrayInPlace(arr) {
+            // for loop to iterate through only the first half of the array
+            for (var i = 0; i < arr.length / 2; i++) {
+                // we want to replace the first letter with last letter, second letter with second to last, etc. so we create a temp variable
+                var tempVar = arr[i]
+                // find the counterpart
+                arr[i] = arr[arr.length - 1 - i]
+                arr[arr.length - 1 - i] = tempVar
+            }
+            return arr
+        }
+        reverseArrayInPlace(1, 2, 3, 4, 5, 6, 7, 8)
+
+    </script>
+</body>
+
+</html>

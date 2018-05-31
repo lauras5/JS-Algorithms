@@ -67,4 +67,4 @@ function getMode(array) {
     return modes;
 }
 
-meanMedianMode([1, 2,3,4,5,6,5,4,1,1,9])
+meanMedianMode([1, 2 ,3 ,4 ,5 ,6 ,5 ,4 ,1 ,1 ,9 ])
